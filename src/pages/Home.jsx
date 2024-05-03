@@ -199,7 +199,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center mt-4">
+        <div className="flex items-center justify-center mt-4 mb-16">
           <div className="flex items-center w-10/12  px-3">
             <Table />
           </div>

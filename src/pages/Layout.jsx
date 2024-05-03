@@ -9,14 +9,14 @@ function Layout() {
     <div>
       <Header />
       <div className="grid grid-cols-12 bg-[#161719]">
-        <div className="col-span-3 bg-slate-600 h-[60%]">
+        <div className="col-span-3">
           <Sidebar />
         </div>
         <div className="col-span-9  w-full">
           <Outlet />
         </div>
       </div>
-      <div className="fixed bottom-0">
+      <div className=" w-[100%]  bg-[#1e2225]">
         <Footer />
       </div>
     </div>
