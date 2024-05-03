@@ -49,7 +49,7 @@ function Sidebar() {
   ];
 
   return (
-    <div>
+    <>
       <div className="bg-[#202125] py-10">
         <div className="flex justify-center bg-[#1c1d21] ">
           <div className="bg-[#2c2f34] flex items-center rounded-lg my-3 p-2 h-16 w-[299px]">
@@ -111,7 +111,7 @@ function Sidebar() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
