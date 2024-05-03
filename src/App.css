@@ -1,4 +1,119 @@
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #151719;
+}
+.banner-bg {
+  background-image: url('./assets/bannerbg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.coll-img img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .sidebar-wrap {
+    display: none;
+  }
+  .case-wrapper {
+    flex-direction: column;
+}
+.case-wrapper {
+  flex-direction: column;
 }
 
+.coll-img {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.coll-img > div {
+  flex: 0 0 50%;
+}
+.cases-wrap > div {width: 50%;}
+.cases-wrap {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.cases-wrap  img {
+  width: 100%;
+}
+.footer-wrap > div {
+  flex-direction: column;
+  align-self: start;
+}
+
+.footer-wrap .w-1\/5,
+.footer-wrap .w-3\/5 {
+  width: 100%;
+  align-items: flex-start;
+}
+
+.footer-wrap .w-full.pl-4.pr-4 {
+  gap: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+}
+.payment-section {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.payment-section > div {
+  flex: 0 0 30%;
+  margin: 0;
+  width: 30%;
+}
+.bit-coins_section > div {
+  /* width: 100%; */
+  /* flex: 0 0 100%; */
+}
+
+.bit-coins_section {
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.house-game_wrapper {
+  max-width: 350px;
+  overflow-x: auto;
+}
+.mobile-hide {
+  display: none;
+}
+.w-\[948px\] {
+  width: 370px;
+}
+.house-game {
+  padding: 0;
+}
+.house-game {
+  flex-wrap: wrap;
+}
+
+.house-game .w-1\/2 {
+  width: 100%;
+}
+.house-game .w-1\/2.flex.items-end.justify-end {
+  justify-content: space-between;
+}
+.house-game_wrapper .flex.items-center.w-full.p-4 {
+  padding: 0;
+}
+.banner-bg .w-12.h-10 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.banner-bg .w-12.h-10 svg {
+  margin: 0 auto;
+}
+}

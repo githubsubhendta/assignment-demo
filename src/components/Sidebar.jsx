@@ -12,45 +12,49 @@ function Sidebar() {
   const chatList = [
     {
       img_url: image1,
-      heading_main: "This is main Heading",
+      heading_main: "Aleksandr Bern",
       time: "3 min ago",
-      details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      details: "Hey! I will be glad to new acquaintances! 🙏",
     },
     {
       img_url: image2,
-      heading_main: "This is main Heading",
+      heading_main: "Nikol Gordon",
       time: "3 min ago",
-      details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      details:
+        "Is someone participating in the lottery? What are the chances? 🤔",
     },
     {
       img_url: image3,
-      heading_main: "This is main Heading",
+      heading_main: "Kas Samurski",
       time: "3 min ago",
-      details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      details: "Who will go to play roulette? 🤷‍♂️",
     },
     {
       img_url: image1,
-      heading_main: "This is main Heading",
+      heading_main: "Aleksandr Bern",
       time: "3 min ago",
-      details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      details:
+        "I'm going to play roulette in a couple of minutes. I want to try a new tactic.",
     },
     {
       img_url: image3,
-      heading_main: "This is main Heading",
+      heading_main: "Murad Ahmedov",
       time: "3 min ago",
-      details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      details:
+        "How to withdraw money from the project? I won for the first time in my life, I want to withdraw everything!",
     },
     {
       img_url: image2,
-      heading_main: "This is main Heading",
+      heading_main: "Nikol Gordon",
       time: "3 min ago",
-      details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      details:
+        "Is someone participating in the lottery? What are the chances? 🤔",
     },
   ];
 
   return (
     <>
-      <div className="bg-[#202125] py-10">
+      <div className="bg-[#1F2225] fixed max-h-[90vh] w-1/4	overflow-y-auto	overflow-x-none">
         <div className="flex justify-center bg-[#1c1d21] ">
           <div className="bg-[#2c2f34] flex items-center rounded-lg my-3 p-2 h-16 w-[299px]">
             <div className="flex items-center justify-between w-full">
@@ -73,7 +77,7 @@ function Sidebar() {
           </div>
         </div>
 
-        <div className="px-10">
+        <div className="px-5">
           {chatList.map((item) => (
             <Card
               img_url={item.img_url}
@@ -83,31 +87,33 @@ function Sidebar() {
             />
           ))}
         </div>
-        <div className="flex items-center justify-center my-4 mx-2">
-          <input
-            type="text"
-            placeholder="Type a message"
-            className="bg-[#2c2f34] px-3 py-[6px] leading-10  w-[80%] rounded-xl  text-[13px] text-slate-300 border-none outline-none placeholder-[#2c2f34]::placeholder"
-          />
-          <button className="bg-yellow-500 py-3 px-6 rounded-md text-md font-bold w-[20%] flex justify-center">
-            Send
-          </button>
-        </div>
-
-        <div className="flex items-center justify-center my-4 mx-2">
-          <div className="bg-[#2c2f34] p-3 w-[75%] rounded-xl text-slate-100 flex justify-between">
-            <div className="flex justify-between gap-10">
-              <div className="w-8 h-7">
-                <img src={flag} alt="flag" className="w-full h-full" />
-              </div>
-              <p className="text-[18px] font-semibold">English</p>
-            </div>
-            <div className="flex justify-center items-center">
-              <FaChevronDown className="text-white" />
-            </div>
+        <div className="sticky bg-[#1F2225] bottom-0 py-2">
+          <div className="flex items-center justify-center my-4 mx-2">
+            <input
+              type="text"
+              placeholder="Type a message"
+              className="bg-[#2c2f34] px-3 py-[6px] leading-10  w-[80%] rounded-xl  text-[13px] text-slate-300 border-none outline-none placeholder-[#2c2f34]::placeholder"
+            />
+            <button className="bg-yellow-500 py-3 px-6 rounded-md text-md font-bold w-[20%] flex justify-center">
+              Send
+            </button>
           </div>
-          <div className="bg-[#2c2f34] py-3 px-6  w-[20%] ml-[5%] rounded-xl text-[13px] text-slate-300 flex justify-center items-center">
-            <FaRegSmile className="text-white text-[20px]" />
+
+          <div className="flex items-center justify-center my-4 mx-2">
+            <div className="bg-[#2c2f34] p-3 w-[75%] rounded-xl text-slate-100 flex justify-between">
+              <div className="flex justify-between gap-10">
+                <div className="w-8 h-7">
+                  <img src={flag} alt="flag" className="w-full h-full" />
+                </div>
+                <p className="text-[18px] font-semibold">English</p>
+              </div>
+              <div className="flex justify-center items-center">
+                <FaChevronDown className="text-white" />
+              </div>
+            </div>
+            <div className="bg-[#2c2f34] py-3 px-6  w-[20%] ml-[5%] rounded-xl text-[13px] text-slate-300 flex justify-center items-center">
+              <FaRegSmile className="text-white text-[20px]" />
+            </div>
           </div>
         </div>
       </div>

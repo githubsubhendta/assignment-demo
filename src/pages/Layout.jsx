@@ -6,17 +6,17 @@ import Sidebar from "../components/Sidebar";
 
 function Layout() {
   return (
-    <div>
+    <div className="bg-[#161719]">
       <Header />
-      <div className="grid grid-cols-12 bg-[#161719]">
-        <div className="col-span-3">
+      <div className="grid grid-cols-12">
+        <div className="col-span-3 mt-[80px]  sidebar-wrap">
           <Sidebar />
         </div>
-        <div className="col-span-9  w-full">
+        <div className="col-span-9  w-full mt-[80px] main-content">
           <Outlet />
         </div>
       </div>
-      <div className=" w-[100%]  bg-[#1e2225]">
+      <div className=" w-full">
         <Footer />
       </div>
     </div>

@@ -31,9 +31,9 @@ import CoinIcon from "../assets/Transparent 1.svg";
 import MainLogo from "../assets/main_logo1.png";
 function Footer() {
   return (
-    <div>
-      <div className="flex justify-between shadow-lg">
-        <div className="flex flex-col items-center ml-6 mt-5">
+    <div className="bg-[#1F2225] p-6 footer-wrap relative">
+      <div className="flex justify-between gap-5">
+        <div className="flex flex-col items-center w-1/5">
           <div>
             <img src={MainLogo} alt="logo" />
           </div>
@@ -41,16 +41,16 @@ function Footer() {
             <span className="text-white text-[14px] font-poppins">
               RustStrike
             </span>
-            <span className="text-slate-400 mt-2 text-[13px] ml-1">
+            <span className="text-[#757786] mt-2 text-[14px] ml-1">
               simply dummy taxt of the <br /> printing and typesetting industry{" "}
               <br /> Lorem ipsum dolor.
             </span>
           </div>
         </div>
-        <div>
+        <div className="w-3/5">
           {" "}
-          <div className="flex items-center justify-start mt-6 font-poppins ">
-            <div className="flex">
+          <div className="">
+            <div className="flex items-center justify-between w-full pl-4 pr-4">
               <div className="flex flex-col mx-4">
                 <div className="flex items-center">
                   <h6 className="text-white text-[14px]">Allife Programm</h6>
@@ -115,9 +115,9 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-6 mr-9 ">
+        <div className="w-1/5">
           <div className="text-white text-[14px] ">Payment Methods</div>
-          <div className="flex items-center justify-center mt-2">
+          <div className="flex items-center justify-start mt-2">
             <div className="text-slate-500 text-[16px]">
               <FaAlipay />
             </div>
@@ -140,68 +140,68 @@ function Footer() {
           <div className="mt-4">
             <div className="text-white text-[14px] ">Follow Us</div>
           </div>
-          <div className="flex items-center justify-center mt-2">
-            <div className="text-slate-500 text-[16px]">
+          <div className="flex items-center justify-start mt-2">
+            <div className="text-[#757786] text-[16px]">
               <FaTelegramPlane />
             </div>
-            <div className="text-slate-500 text-[16px] mx-2">
+            <div className="text-[#757786] text-[16px] mx-2">
               <FaYoutube />
             </div>
-            <div className="text-slate-500 text-[16px] mx-2">
+            <div className="text-[#757786] text-[16px] mx-2">
               <FaTwitter />
             </div>
-            <div className="text-slate-500 text-[16px] mx-2">
+            <div className="text-[#757786] text-[16px] mx-2">
               <IoLogoInstagram />
             </div>
-            <div className="text-slate-500 text-[16px] mx-2">
+            <div className="text-[#757786] text-[16px] mx-2">
               <FaDiscord />
             </div>
-            <div className="text-slate-500 text-[16px] mx-2">
+            <div className="text-[#757786] text-[16px] mx-2">
               <FaTiktok />
             </div>
-            <div className="text-slate-500 text-[16px] mx-2">
+            <div className="text-[#757786] text-[16px] mx-2">
               <FaFacebook />
             </div>
           </div>
         </div>
       </div>
-      <div className="mx-10px py-6 shadow-lg">
-        <div className="flex items-center justify-center">
-          <div className="text-slate-500 text-[24px] mx-9">
+      <div className="mx-10px py-6 border-b-2 border-[#3F4655] border-t-2 my-10">
+        <div className="flex items-center justify-center payment-section">
+          <div className="text-[#666773] text-[24px] mx-9">
             <FaBitcoin />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <FaLitecoinSign />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <FaGooglePay />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <IoLogoUsd />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <RiVisaLine />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <FaAlipay />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <FaAmazonPay />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <FaCcPaypal />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <SiPayoneer />
           </div>
-          <div className="text-slate-500 text-[24px] mx-9">
+          <div className="text-[#666773] text-[24px] mx-9">
             <SiApplepay />
           </div>
         </div>
       </div>
 
-      <div className="mx-10px py-6 shadow-lg">
-        <div className="flex items-center justify-center">
+      <div className="mx-10px py-6 ">
+        <div className="flex items-center justify-center bit-coins_section">
           <div className="bg-[#1a1b1f] rounded-xl flex items-center justify-center px-2 py-1 mx-6">
             <img className="h-4 pr-1" src={CoinIcon} alt="" />
             <p className="text-slate-500 text-[14px]">
@@ -248,7 +248,7 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center pt-7">
+        <div className="flex items-center justify-center mt-7">
           <p className="text-slate-600 text-[15px]">
             Copyright (C) 2024{" "}
             <span className="text-slate-300 font-poppins text-[15px]">

@@ -10,8 +10,8 @@ import { FaChevronDown } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 function Header() {
   return (
-    <div className="bg-[#1e2225] h-20 w-[100%] flex items-center ">
-      <div className="flex font-bold mx-10">
+    <div className="bg-[#1e2225] h-20 w-[100%] flex items-center justify-between fixed header-wrap">
+      <div className="flex font-bold mx-10 logo">
         <img src={mainlogo} className="h-full w-full" />
         {/* <div className="text-white">RUST</div>
         <div className="">
@@ -19,7 +19,7 @@ function Header() {
         <div className="font-bold">STRIKE</div> */}
       </div>
 
-      <div className="flex items-center mx-8 shadow-lg bg-gray-800 px-2 py-1 rounded-lg">
+      <div className="flex items-center mx-8 shadow-lg bg-[#2C3034] px-2 py-1 rounded-[10px] mobile-hide">
         <div className="px-1">
           <img src={imageGame} alt="" />
         </div>
@@ -29,8 +29,8 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex items-center justify-between  ">
-        <div className="flex ml-44 px-2 rounded-lg bg-gray-800">
+      <div className="flex items-center justify-between mobile-hide">
+        <div className="flex ml-44 px-2 rounded-[10px] bg-[#2C3034] items-center">
           <img src={BalanceSvg} alt="" />
           <div className="bg-yellow-500 my-1 rounded-md w-6 h-6 flex items-center justify-center ">
             <FaChevronDown className=" text-[10px]  " />
@@ -38,17 +38,17 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex items-end justify-center">
-        <div className="  bg-gray-800 flex items-center justify-center w-24 h-8  ml-48 rounded-lg ">
+      <div className="flex items-center justify-center">
+        <div className="bg-[#2C3034] flex items-center justify-center w-24 h-8  ml-48 rounded-[10px] mobile-hide">
           <img className="mt-2" src={Vector} alt="" />
           <p className="text-white text-[12px]">Withdraw</p>
         </div>
-        <div className="  bg-yellow-500 flex items-center justify-center  w-20 h-8 ml-3 rounded-lg ">
+        <div className="  bg-yellow-500 flex items-center justify-center  w-20 h-8 ml-3 rounded-lg mobile-hide">
           <FiPlus className=" items-center" />
           <p className=" text-[12px] font-bold">Deposit</p>
         </div>
 
-        <div className="bg-gray-800 w-9 h-9 ml-8 flex justify-center items-center rounded-lg">
+        <div className="bg-gray-800 w-9 h-9 ml-8 flex justify-center items-center rounded-lg mobile-hide">
           <img className="h-6" src={Group} alt="" />
         </div>
 

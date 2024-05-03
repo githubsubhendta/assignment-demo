@@ -5,11 +5,11 @@ function Card({ img_url, heading_main, time, details }) {
   return (
     <>
       <div className="bg-[#2c2f34] flex rounded-lg mt-5 gap-2 p-2">
-        <div className="h-20 w-20 flex items-center">
-          <img src={img_url} className="h-full" />
+        <div className="w-[42px] h-[42px] flex items-center">
+          <img src={img_url} className="w-[42px] h-[42px] block" />
         </div>
         <div>
-          <div className="flex">
+          <div className="flex items-center gap-3">
             <h2 className="text-[#777a7f] text-[14px] font-bold">
               {heading_main}
             </h2>
