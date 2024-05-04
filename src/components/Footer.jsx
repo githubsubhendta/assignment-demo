@@ -31,7 +31,7 @@ import CoinIcon from "../assets/Transparent 1.svg";
 import MainLogo from "../assets/main_logo1.png";
 function Footer() {
   return (
-    <div className="bg-[#1F2225] p-6 footer-wrap relative">
+    <div className="bg-[#1F2225] p-6 footer-wrap relative w-full">
       <div className="flex justify-between gap-5">
         <div className="flex flex-col items-center w-1/5">
           <div>
