@@ -9,10 +9,10 @@ function Layout() {
     <div className="bg-[#161719]">
       <Header />
       <div className="grid grid-cols-12">
-        <div className="col-span-3 mt-[80px]  sidebar-wrap">
+        <div className="col-span-3 mt-[80px]  w-1/4 sidebar-wrap">
           <Sidebar />
         </div>
-        <div className="col-span-9  w-full mt-[80px] main-content">
+        <div className="col-span-9  mt-[80px] w-4/5 main-content">
           <Outlet />
         </div>
       </div>
