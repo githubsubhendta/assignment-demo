@@ -54,7 +54,7 @@ function Sidebar() {
 
   return (
     <>
-      <div className="bg-[#1F2225] fixed max-h-[90vh] w-1/4	overflow-y-auto	overflow-x-none">
+      <div className="fixed max-h-[90vh] w-1/4	overflow-y-auto	overflow-x-none">
         <div className="flex justify-center bg-[#1c1d21] ">
           <div className="bg-[#2c2f34] flex items-center rounded-lg my-3 p-2 h-16 w-[299px]">
             <div className="flex items-center justify-between w-full">
@@ -78,8 +78,9 @@ function Sidebar() {
         </div>
 
         <div className="px-5">
-          {chatList.map((item) => (
+          {chatList.map((item, index) => (
             <Card
+              key={"sidebar_" + index}
               img_url={item.img_url}
               heading_main={item.heading_main}
               time={item.time}

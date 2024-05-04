@@ -10,7 +10,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 function Header() {
   return (
-    <div className="bg-[#1e2225] h-20 w-[full] flex items-center justify-between fixed header-wrap">
+    <div className="bg-[#1e2225] h-20 flex items-center justify-between fixed header-wrap w-full z-10">
       <div className="flex font-bold mx-10 logo">
         <img src={mainlogo} className="h-full w-full" />
         {/* <div className="text-white">RUST</div>

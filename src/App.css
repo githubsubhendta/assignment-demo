@@ -12,6 +12,25 @@ body {
   object-fit: cover;
   width: 100%;
 }
+.slider-section {
+  position: relative;
+}
+.carousel-button-group {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 100%;
+}
+.previous-cta {
+  position: absolute;
+  right: 90px;
+  top: 9px;
+}
+.next-cta {
+  position: absolute;
+  right: 43px;
+  top: 9px;
+}
 @media (max-width: 768px) {
   .sidebar-wrap {
     display: none;
@@ -112,8 +131,13 @@ body {
   width: 2rem;
   height: 2rem;
 }
-
+.house-game .ml-4.space-x-3 {
+  display: none;
+}
 .banner-bg .w-12.h-10 svg {
   margin: 0 auto;
+}
+.carousel-button-group {
+  display: none;
 }
 }

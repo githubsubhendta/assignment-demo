@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Table from "./Table";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaGreaterThan } from "react-icons/fa6";
@@ -22,10 +22,66 @@ import Icon1 from "./../assets/icon (1).svg";
 import Plinko from "./../assets/Plinko.png";
 import Crash from "./../assets/Crash.png";
 import Dice from "./../assets/Dice.png";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 const Home = () => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 5,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 768, min: 0 },
+      items: 1,
+    },
+  };
+
+  const [prev, setPrev] = useState("");
+  const [tab, setTab] = useState("All-Bets");
+
+  const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const {
+      carouselState: { currentSlide },
+    } = rest;
+    return (
+      <div className="carousel-button-group">
+        <button
+          className={
+            currentSlide === 0 ? "disable" : "" + "text-white previous-cta"
+          }
+          onClick={() => {
+            setPrev("prev");
+            previous();
+          }}
+        >
+          <FaLessThan className="text-center text-gray-400 text-sm" />
+        </button>
+        <button
+          onClick={() => {
+            setPrev("next");
+            next();
+          }}
+          className="text-white next-cta"
+        >
+          <FaGreaterThan className="text-center text-sm" />
+        </button>
+      </div>
+    );
+  };
+
   return (
-    <div>
-      <div className="container mx-auto pl-5 pr-5 w-[948px]">
+    <>
+      <div className="container mx-auto pl-5 pr-5 w-full">
         <div className="grid grid-cols-12 banner-bg">
           {/* Left Arrow */}
           <div className="w-12 h-10 bg-[#2c2f34] rounded flex items-center justify-start mt-3">
@@ -83,7 +139,7 @@ const Home = () => {
         {/* ///////////////////////////////////// cards end ///////////////////////////////////////////////// */}
 
         {/* ///////////////////////////////////// second cards ///////////////////////////////////////////////// */}
-        <div className="bg-[#1F2225] rounded-[16px] pt-5 pb-4 mb-3 pl-4 pr-4">
+        <div className="bg-[#1F2225] rounded-[16px] pt-5 pb-4 mb-3 pl-4 pr-4 slider-section">
           <div className="">
             <div className="flex items-center w-full justify-between p-4 house-game">
               <div className="w-1/2 flex items-center">
@@ -98,41 +154,71 @@ const Home = () => {
                   <p className="text-[13px] text-[#555C63]">see All</p>
                 </div>
                 <div className="flex items-center justify-center ml-4 space-x-3">
-                  <div className="w-[36px] h-[36px] flex items-center justify-center rounded-[13px] bg-[#2C3034]">
-                    <FaLessThan className="text-center text-gray-400 text-sm" />
+                  <div
+                    className={`w-[36px] h-[36px] flex items-center justify-center rounded-[13px] bg-[#2C3034] ${
+                      prev == "prev" && "bg-[#FFC10A]"
+                    }`}
+                  >
+                    {/* <FaLessThan className="text-center text-gray-400 text-sm" /> */}
                   </div>
-                  <div className="w-[36px] h-[36px] flex items-center justify-center rounded-[13px] bg-[#FFC10A]">
-                    <FaGreaterThan className="text-center text-sm" />
+                  <div
+                    className={`w-[36px] h-[36px] flex items-center justify-center rounded-[13px] bg-[#2C3034] ${
+                      prev == "next" && "bg-[#FFC10A]"
+                    } `}
+                  >
+                    {/* <FaGreaterThan className="text-center text-sm" /> */}
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="">
-            <div className="flex items-center justify-between w-full coll-img">
-              <div className="flex flex-col items-center rounded-lg h-[202px] w-[202]">
-                <img src={Roulette} alt="" />
-              </div>
+            <div className="">
+              {/* flex items-center justify-between w-full coll-img */}
+              <Carousel
+                swipeable={true}
+                draggable={true}
+                showDots={false}
+                responsive={responsive}
+                infinite={true}
+                autoPlay={false}
+                autoPlaySpeed={1000}
+                renderButtonGroupOutside={true}
+                // keyBoardControl={true}
+                // customTransition="all .5"
+                transitionDuration={500}
+                // containerClass="carousel-container"
+                // removeArrowOnDeviceType={["tablet", "mobile"]}
+                // deviceType={this.props.deviceType}
+                // dotListClass="custom-dot-list-style"
+                // itemClass="carousel-item-padding-40-px"
+                arrows={false}
+                customButtonGroup={<ButtonGroup />}
+              >
+                <div className="flex flex-col items-center rounded-lg h-[202px] w-[202]">
+                  <img src={Roulette} alt="" />
+                </div>
 
-              {/* Column 2 */}
-              <div className="flex flex-col items-centerrounded-lg h-[202px] w-[202] sm:flex-[33%]">
-                <img src={Mines} alt="" />
-              </div>
+                {/* Column 2 */}
+                <div className="flex flex-col items-centerrounded-lg h-[202px] w-[202] sm:flex-[33%]">
+                  <img src={Mines} alt="" />
+                </div>
 
-              {/* Column 3 */}
-              <div className="flex flex-col items-center  rounded-lg h-[202px] w-[202] sm:flex-[33%]">
-                <img src={Plinko} alt="" />
-              </div>
+                {/* Column 3 */}
+                <div className="flex flex-col items-center  rounded-lg h-[202px] w-[202] sm:flex-[33%]">
+                  <img src={Plinko} alt="" />
+                </div>
 
-              {/* Column 4 */}
-              <div className="flex flex-col items-center rounded-lg h-[202px] w-[202] sm:flex-[33%]">
-                <img src={Crash} alt="" />
-              </div>
+                {/* Column 4 */}
+                <div className="flex flex-col items-center rounded-lg h-[202px] w-[202] sm:flex-[33%]">
+                  <img src={Crash} alt="" />
+                </div>
 
-              {/* Column 5 */}
-              <div className="flex flex-col items-center rounded-lg h-[202px] w-[202] sm:flex-[33%]">
-                <img src={Dice} alt="" />
-              </div>
+                {/* Column 5 */}
+                <div className="flex flex-col items-center rounded-lg h-[202px] w-[202] sm:flex-[33%]">
+                  <img src={Dice} alt="" />
+                </div>
+              </Carousel>
             </div>
           </div>
         </div>
@@ -183,21 +269,43 @@ const Home = () => {
           <div className="flex items-center w-full  px-3">
             <div className="">
               <ul className="flex justify-center items-center gap-4">
-                <div className="bg-[#2C3034] w-20  px-2  py-2 rounded-[10px]">
-                  <li className="text-white  text-[13px] font-medium text-center">
-                    {" "}
-                    All Bets
-                  </li>
-                </div>
-                <li className="text-[#555C63]  text-[13px] font-medium text-center">
-                  {" "}
+                {/* <div
+                  className={`text-[#555C63] ${
+                    tab == "All-Bets" && "bg-[#2C3034]"
+                  } w-20  px-2  py-2 rounded-[10px] cursor-pointer`}
+                  onClick={() => setTab("All-Bets")}
+                > */}
+                <li
+                  className={`text-[#555C63] ${
+                    tab == "All-Bets" && "bg-[#2C3034] text-white"
+                  }  text-[13px] font-medium text-center px-2  py-2 rounded-[10px] cursor-pointer`}
+                  onClick={() => setTab("All-Bets")}
+                >
+                  All Bets
+                </li>
+                {/* </div> */}
+                <li
+                  className={`text-[#555C63] ${
+                    tab == "High-Holders" && "bg-[#2C3034] text-white"
+                  }  text-[13px] font-medium text-center px-2  py-2 rounded-[10px] cursor-pointer`}
+                  onClick={() => setTab("High-Holders")}
+                >
                   High Holders
                 </li>
-                <li className="text-[#555C63]  text-[13px] font-medium text-center">
-                  {" "}
+                <li
+                  className={`text-[#555C63] ${
+                    tab == "Lucky-Bets" && "bg-[#2C3034] text-white"
+                  }  text-[13px] font-medium text-center px-2  py-2 rounded-[10px] cursor-pointer`}
+                  onClick={() => setTab("Lucky-Bets")}
+                >
                   Lucky Bets
                 </li>
-                <li className="text-[#555C63]  text-[13px] text-center">
+                <li
+                  className={`text-[#555C63] ${
+                    tab == "My-Bets" && "bg-[#2C3034] text-white"
+                  }   text-[13px] font-medium text-center px-2  py-2 rounded-[10px] cursor-pointer`}
+                  onClick={() => setTab("My-Bets")}
+                >
                   My Bets
                 </li>
               </ul>
@@ -206,13 +314,19 @@ const Home = () => {
         </div>
         <div className="mt-4 mb-16 table-wrapper mobile-hide">
           <div className="flex items-center w-full  px-3">
-            <Table />
+            {tab == "All-Bets" ? (
+              <Table />
+            ) : (
+              <div className="flex justify-center items-center h-[200px]">
+                <p className="text-white">empty {tab}</p>
+              </div>
+            )}
           </div>
         </div>
 
         {/* /////////////////////////////////// Table  End ////////////////////////////////////////////////////////////////  */}
       </div>
-    </div>
+    </>
   );
 };
 
